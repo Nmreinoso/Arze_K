@@ -2,8 +2,8 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [main] # This triggers the robot whenever you 'push' to main
-  workflow_dispatch: # This lets you start it manually if needed
+    branches: [main]
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -16,9 +16,13 @@ jobs:
     steps:
       - name: Checkout your repository
         uses: actions/checkout@v4
+
       - name: Install, build, and upload your site
         uses: withastro/action@v3
-        # No extra code needed here; the Astro Action handles the heavy lifting!
+        with:
+          path: .
+          node-version: 20
+          package-manager: npm # This tells the robot to use NPM specifically
 
   deploy:
     needs: build
