@@ -2,38 +2,56 @@
 const { title } = Astro.props;
 ---
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<title>{title}</title>
-		<style>
-			body {
-				background-color: #f0f7ff; /* Soft sky blue */
-				color: #2c3e50; /* Professional navy */
-				font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-				margin: 0;
-				line-height: 1.6;
-			}
-			nav {
-				background: white;
-				padding: 1rem;
-				border-bottom: 3px solid #a2c2e1; /* Gentle blue accent */
-				display: flex;
-				justify-content: center;
-				gap: 20px;
-			}
-			nav a { text-decoration: none; color: #0056b3; font-weight: bold; }
-			main { max-width: 800px; margin: 40px auto; padding: 20px; background: white; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
-			footer { text-align: center; font-size: 0.8rem; color: #7f8c8d; margin-top: 50px; }
-		</style>
-	</head>
-	<body>
-		<nav>
-			<a href="/">Home</a>
-			<a href="/resume">Resume</a>
-			<a href="/blog">Blog</a>
-		</nav>
-		<main>
-			<slot /> </main>
-		<footer>© 2026 Arze K. | Built with care.</footer>
-	</body>
-</html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <style>
+      /* Defining our "Coastal Professional" Palette */
+      :root {
+        --deep-navy: #003366;
+        --soft-blue: #f0f7ff;
+        --accent-blue: #a2c2e1;
+        --link-blue: #0056b3;
+        --pure-white: #ffffff;
+      }
+
+      body {
+        background-color: var(--soft-blue);
+        color: #2c3e50;
+        font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        margin: 0;
+        line-height: 1.6;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+      }
+
+      /* Navigation Menu */
+      nav {
+        background: var(--pure-white);
+        padding: 1.2rem;
+        border-bottom: 4px solid var(--accent-blue);
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      }
+
+      nav a {
+        text-decoration: none;
+        color: var(--link-blue);
+        font-weight: 600;
+        font-size: 1.1rem;
+        transition: color 0.3s ease;
+      }
+
+      nav a:hover {
+        color: var(--deep-navy);
+        text-decoration: underline;
+      }
+
+      /* Main Content Container */
