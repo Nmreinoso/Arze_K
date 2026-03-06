@@ -1,54 +1,68 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
 ---
+
 <MainLayout title="Karen Arze | Home">
-    <section style="display: flex; align-items: center; gap: 60px; margin-bottom: 80px; flex-wrap: wrap;">
-        <div style="flex: 1.5; min-width: 300px;">
-            <h1 style="font-size: 4rem; margin: 0; line-height: 1;">Karen Arze</h1>
-            <p style="color: var(--gold); font-weight: 600; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 30px;">Optical Professional </p>
-            <p style="font-size: 1.1rem; line-height: 1.8; border-left: 2px solid var(--gold); padding-left: 20px;">
+    <section style="display: flex; gap: 60px; margin-bottom: 100px; align-items: flex-start; flex-wrap: wrap;">
+        
+        <div style="flex: 1; min-width: 320px;">
+            <div style="width: 100%; max-width: 400px; height: 550px; background: #fdfdfd; border: 1px solid var(--gold); padding: 12px; position: relative; box-shadow: 25px 25px 0px rgba(184, 159, 109, 0.1);">
+                <img 
+                    src="/Arze_K/karen.jpg" 
+                    alt="Karen Arze" 
+                    style="width: 100%; height: 100%; object-fit: cover; display: block;" 
+                />
+            </div>
+        </div>
+
+        <div style="flex: 1.5; min-width: 350px; padding-top: 20px;">
+            <h1 style="font-size: 4.5rem; margin: 0; line-height: 0.9; letter-spacing: -2px;">Karen Arze</h1>
+            <p style="color: var(--gold); font-weight: 600; text-transform: uppercase; letter-spacing: 4px; margin: 25px 0 35px 0; font-size: 0.9rem;">Optical Professional</p>
+            
+            <p style="font-size: 1.15rem; line-height: 1.9; color: #333; margin-bottom: 50px; font-weight: 300;">
                 Quick to adapt and eager to learn, I am reliable enough to take on leadership roles and always strive for work that can model what I would like to see in others. I'm always enthusiastic to apply my experiences into an environment that appreciates organization and efficiency!
             </p>
-           <div style="margin-top: 50px; border-top: 2px solid var(--gold); padding-top: 30px; display: flex; flex-wrap: wrap; gap: 40px;">
-    <div style="flex: 1; min-width: 200px;">
-        <p style="font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); font-weight: 600; margin: 0 0 8px 0;">Location</p>
-        <p style="font-size: 1.1rem; color: var(--navy); margin: 0; font-family: 'Cormorant Garamond', serif; font-weight: bold;">Norfolk, Virginia</p>
-    </div>
 
-    <div style="flex: 1; min-width: 200px; border-left: 1px solid #e0e0e0; padding-left: 30px;">
-        <p style="font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); font-weight: 600; margin: 0 0 8px 0;">Phone Number</p>
-        <p style="font-size: 1.1rem; color: var(--navy); margin: 0; font-family: 'Cormorant Garamond', serif; font-weight: bold;">757-515-****</p>
-    </div>
-
-    <div style="flex: 1; min-width: 250px; border-left: 1px solid #e0e0e0; padding-left: 30px;">
-        <p style="font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); font-weight: 600; margin: 0 0 8px 0;">Email</p>
-        <p style="font-size: 1.1rem; color: var(--navy); margin: 0; font-family: 'Cormorant Garamond', serif; font-weight: bold;">karen_nat*@yahoo.com</p>
-    </div>
-</div>
-        <div style="flex: 1; text-align: center;">
-            <div style="width: 350px; height: 450px; background: #ddd; border: 1px solid var(--gold); padding: 10px; margin: 0 auto;">
-                <img src="/Arze_K/karen.jpg" alt="Karen Arze" style="width: 100%; height: 100%; object-fit: cover;" />
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; border-top: 1px solid #e5e5e5; padding-top: 35px;">
+                <div>
+                    <p style="font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); font-weight: 600; margin-bottom: 8px;">Location</p>
+                    <p style="font-size: 1.1rem; color: var(--navy); margin: 0; font-family: 'Cormorant Garamond', serif; font-weight: bold;">Norfolk, Virginia</p>
+                </div>
+                <div>
+                    <p style="font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); font-weight: 600; margin-bottom: 8px;">Phone Number</p>
+                    <p style="font-size: 1.1rem; color: var(--navy); margin: 0; font-family: 'Cormorant Garamond', serif; font-weight: bold;">757-515-****</p>
+                </div>
+                <div style="grid-column: span 2;">
+                    <p style="font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); font-weight: 600; margin-bottom: 8px;">Email Address</p>
+                    <p style="font-size: 1.1rem; color: var(--navy); margin: 0; font-family: 'Cormorant Garamond', serif; font-weight: bold;">karen_nat*@yahoo.com</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <h2 style="text-align: center; font-size: 3rem; margin-bottom: 40px;">Personal Interests</h2>
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 30px;">
-        <div style="padding: 20px; background: white;">
-            <h3 style="color: var(--gold);">The Shoreline</h3>
-            <p style="font-size: 0.9rem;">Long walks on the beach. Even if it's a bit of a drive, it's always worth being able to see the beautiful sunrise!</p>
-        </div>
-        <div style="padding: 20px; background: white;">
-            <h3 style="color: var(--gold);">The Rhythm</h3>
-            <p style="font-size: 0.9rem;">Dancing—Bachata, Meringue, Jazz, and Salsa. This is when I feel the most like myself!</p>
-        </div>
-        <div style="padding: 20px; background: white;">
-            <h3 style="color: var(--gold);">The Kitchen</h3>
-            <p style="font-size: 0.9rem;">Experimental cooking. Challenging myself with available ingredients to create family favorites.</p>
-        </div>
-        <div style="padding: 20px; border: 2px solid var(--gold); text-align: center;">
-            <h3 style="margin-top: 0;">My Heart ❤️</h3>
-            <p style="font-size: 0.9rem;">My Son and Daughter are my pride and joy! Though they're grown, they will always be my babies.</p>
+    <div style="margin-top: 80px; border-top: 1px solid #eee; padding-top: 60px;">
+        <h2 style="text-align: center; font-size: 3.5rem; margin-bottom: 60px; color: var(--navy);">Personal Interests</h2>
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 50px;">
+            <div style="padding: 10px;">
+                <h3 style="color: var(--gold); font-size: 1.8rem; margin-bottom: 15px;">The Shoreline</h3>
+                <p style="font-size: 0.95rem; line-height: 1.7; color: #555;">Long walks on the beach. Even if it's a bit of a drive, it's always worth being able to see the beautiful sunrise!</p>
+            </div>
+            
+            <div style="padding: 10px;">
+                <h3 style="color: var(--gold); font-size: 1.8rem; margin-bottom: 15px;">The Rhythm</h3>
+                <p style="font-size: 0.95rem; line-height: 1.7; color: #555;">Dancing—Bachata, Meringue, Jazz, and Salsa. This is when I feel the most like myself!</p>
+            </div>
+            
+            <div style="padding: 10px;">
+                <h3 style="color: var(--gold); font-size: 1.8rem; margin-bottom: 15px;">The Kitchen</h3>
+                <p style="font-size: 0.95rem; line-height: 1.7; color: #555;">Experimental cooking. Challenging myself with available ingredients to create family favorites.</p>
+            </div>
+            
+            <div style="padding: 30px; border: 1px solid var(--gold); text-align: center; background-color: #fff;">
+                <h3 style="margin-top: 0; font-size: 1.8rem;">My Heart ❤️</h3>
+                <p style="font-size: 0.95rem; line-height: 1.7; color: #555;">My Son and Daughter are my pride and joy! Though they're grown, they will always be my babies at heart.</p>
+            </div>
         </div>
     </div>
 </MainLayout>
