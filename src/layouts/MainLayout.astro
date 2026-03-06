@@ -1,76 +1,64 @@
-<style>
-    /* 1. Global Variables */
-    :root {
-        --navy: #1a2a6c;
-        --mist: #f0f4f8; /* Soft blue-grey for the 'empty' sides */
-        --gold: #b89f6d;
-        --white: #ffffff;
-    }
-
-    /* 2. The Background (The Empty Space) */
-    html, body {
-        margin: 0;
-        padding: 0;
-        background-color: var(--mist); /* This color fills the laptop sides */
-        font-family: 'Montserrat', sans-serif;
-    }
-
-    /* 3. The Top Navigation */
-    nav {
-        background-color: var(--white);
-        padding: 25px 0;
-        display: flex;
-        justify-content: center;
-        border-bottom: 2px solid var(--gold);
-    }
-
-    nav a {
-        margin: 0 20px;
-        text-decoration: none;
-        color: var(--navy);
-        text-transform: uppercase;
-        font-size: 0.8rem;
-        letter-spacing: 2px;
-        font-weight: 600;
-    }
-
-    /* 4. The Content Box (The Frame) */
-    main {
-        /* This fills more of the laptop screen */
-        max-width: 1200px; 
-        margin: 40px auto; /* Centers the box */
-        background-color: var(--white);
-        padding: 60px;
-        
-        /* Adds a subtle border and shadow so it looks like a professional document */
-        border: 1px solid #d1d1d1;
-        box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-        
-        /* Ensures the box stays centered and visible */
-        display: block;
-        min-height: 80vh;
-    }
-
-    footer {
-        text-align: center;
-        padding: 40px;
-        color: #777;
-        font-size: 0.8rem;
-    }
-
-    /* Simple fix for mobile phones */
-    @media (max-width: 1200px) {
-        main {
-            margin: 0;
-            max-width: 100%;
-            border: none;
+---
+const { title } = Astro.props;
+---
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --navy: #1a2a6c;
+            --mist: #f4f7f9;
+            --gold: #b89f6d;
+            --white: #ffffff;
         }
-    }
-</style>
-
-<main>
+        body {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--mist);
+            color: #333;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            padding: 2rem 0;
+            background: var(--white);
+            border-bottom: 1px solid #e0e0e0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        nav a {
+            margin: 0 20px;
+            text-decoration: none;
+            color: var(--navy);
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            font-weight: 600;
+        }
+        nav a:hover { color: var(--gold); }
+        main {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        h1, h2, h3 { font-family: 'Cormorant Garamond', serif; color: var(--navy); }
+        .page-header { text-align: center; margin-bottom: 60px; }
+        footer { text-align: center; padding: 40px; font-size: 0.8rem; color: #999; }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="/Arze_K/">Home</a>
+        <a href="/Arze_K/resume/">Resume</a>
+        <a href="/Arze_K/blog/">Blog</a>
+    </nav>
+    <main>
         <slot />
     </main>
-    <footer>...</footer>
-  </body>
+    <footer>© 2026 Karen Arze | Professional & Personal Portfolio</footer>
+</body>
 </html>
