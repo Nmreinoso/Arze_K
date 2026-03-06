@@ -10,14 +10,14 @@ const { title } = Astro.props;
     <style>
         :root {
             --navy: #1a2a6c;
-            --mist: #eef2f6; 
+            --mist: #f4f7f9;
             --gold: #b89f6d;
             --white: #ffffff;
         }
         body {
             margin: 0;
             font-family: 'Montserrat', sans-serif;
-            background-color: var(--mist); 
+            background-color: var(--mist);
             color: #333;
         }
         nav {
@@ -25,7 +25,7 @@ const { title } = Astro.props;
             justify-content: center;
             padding: 2rem 0;
             background: var(--white);
-            border-bottom: 2px solid var(--gold); 
+            border-bottom: 1px solid #e0e0e0;
             position: sticky;
             top: 0;
             z-index: 100;
@@ -40,28 +40,25 @@ const { title } = Astro.props;
             font-weight: 600;
         }
         nav a:hover { color: var(--gold); }
-        
         main {
-            /* 1. Centering: Reduced width slightly to make it feel more 'centered' on wide laptops */
-            max-width: 1060px; 
-            /* 2. Spacing: Increased top/bottom margin so the box sits in the middle of the screen */
-            margin: 60px auto; 
-            padding: 60px;
-            background: var(--white);
-            
-            /* 3. The Border: A clean, high-contrast professional border that won't break the site */
-            border: 8px solid var(--white);
-            outline: 1px solid var(--gold); 
-            box-shadow: 0 15px 50px rgba(0,0,0,0.1);
-            
-            min-height: 80vh;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 40px 20px;
         }
-
         h1, h2, h3 { font-family: 'Cormorant Garamond', serif; color: var(--navy); }
         .page-header { text-align: center; margin-bottom: 60px; }
         footer { text-align: center; padding: 40px; font-size: 0.8rem; color: #999; }
-
-        @media (max-width: 1100px) {
-            main {
-                margin: 0;
-                padding: 30px 20px
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="/Arze_K/">Home</a>
+        <a href="/Arze_K/resume/">Resume</a>
+        <a href="/Arze_K/blog/">Blog</a>
+    </nav>
+    <main>
+        <slot />
+    </main>
+    <footer>© 2026 Karen Arze | Professional & Personal Portfolio</footer>
+</body>
+</html>
