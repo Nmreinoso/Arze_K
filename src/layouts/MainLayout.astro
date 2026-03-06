@@ -7,21 +7,23 @@ const { title } = Astro.props;
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
     <style>
-      :root { --navy: #003366; --soft-blue: #f0f7ff; --accent: #a2c2e1; }
-      body { background: var(--soft-blue); font-family: sans-serif; margin: 0; color: #333; }
-      nav { background: white; padding: 1rem; border-bottom: 4px solid var(--accent); display: flex; justify-content: center; gap: 20px; }
-      nav a { text-decoration: none; color: #0056b3; font-weight: bold; }
-      main { max-width: 800px; margin: 40px auto; padding: 40px; background: white; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+      body { background: #f0f7ff; font-family: 'Segoe UI', sans-serif; margin: 0; color: #2c3e50; }
+      nav { background: white; padding: 1.5rem; border-bottom: 4px solid #a2c2e1; display: flex; justify-content: center; gap: 30px; }
+      nav a { text-decoration: none; color: #0056b3; font-weight: bold; font-size: 1.1rem; }
+      main { max-width: 850px; margin: 40px auto; padding: 40px; background: white; border-radius: 20px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); }
+      .section-blue { background: #f8fbff; border-radius: 12px; padding: 20px; border-left: 5px solid #a2c2e1; margin: 20px 0; }
+      footer { text-align: center; padding: 20px; color: #7f8c8d; font-size: 0.9rem; }
     </style>
   </head>
   <body>
     <nav>
       <a href="/Arze_K/">Home</a>
-      <a href="/Arze_K/resume">Resume</a>
-      <a href="/Arze_K/blog">Blog</a>
+      <a href="/Arze_K/resume/">Resume</a>
+      <a href="/Arze_K/blog/">Blog</a>
     </nav>
     <main>
       <slot />
     </main>
+    <footer>© 2026 Karen Arze</footer>
   </body>
 </html>
