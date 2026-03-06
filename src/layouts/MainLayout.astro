@@ -41,20 +41,22 @@ const { title } = Astro.props;
         }
         nav a:hover { color: var(--gold); }
         
-        /* THE MAIN EDIT: Enhanced Border and Centering */
+        /* THE STABLE STANDOUT EDIT */
         main {
-            max-width: 1100px; /* Narrowed slightly to feel more 'centered' on wide screens */
-            margin: 60px auto; /* Increased top/bottom margin for a more balanced vertical look */
-            padding: 60px;     
-            background: var(--white); 
+            max-width: 1100px;
+            margin: 60px auto; 
+            background: var(--white);
             
-            /* STANDOUT BORDER: A soft grey outer line with a gold 'inset' outline */
-            border: 1px solid #d1d1d1; 
-            outline: 2px solid var(--gold);
-            outline-offset: -15px; /* This pulls the gold line inside the white box */
-            
-            /* Elevated shadow for a professional depth */
-            box-shadow: 0 20px 40px rgba(0,0,0,0.08); 
+            /* Creating a high-end "double border" look safely */
+            border: 1px solid #d1d1d1; /* Outer grey line */
+            padding: 15px;             /* This creates the white "gap" */
+            box-shadow: 0 15px 45px rgba(0,0,0,0.1);
+        }
+
+        /* This inner div creates the internal Gold frame */
+        .content-frame {
+            border: 2px solid var(--gold);
+            padding: 45px; /* Actual padding for your text/images */
             min-height: 80vh;
         }
 
@@ -62,14 +64,10 @@ const { title } = Astro.props;
         .page-header { text-align: center; margin-bottom: 60px; }
         footer { text-align: center; padding: 40px; font-size: 0.8rem; color: #999; }
 
-        /* Ensuring it still looks good on phones */
-        @media (max-width: 1200px) {
+        @media (max-width: 1100px) {
             main {
                 margin: 0;
-                padding: 30px 20px;
+                padding: 0;
                 border: none;
-                outline: none; /* Removes the special border on mobile for better fit */
             }
-        }
-    </style>
-</head>
+            .content
