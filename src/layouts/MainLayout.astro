@@ -10,14 +10,14 @@ const { title } = Astro.props;
     <style>
         :root {
             --navy: #1a2a6c;
-            --mist: #f4f7f9;
+            --mist: #eef2f6; /* Slightly deeper mist to define the sides better */
             --gold: #b89f6d;
             --white: #ffffff;
         }
         body {
             margin: 0;
             font-family: 'Montserrat', sans-serif;
-            background-color: var(--mist);
+            background-color: var(--mist); /* Fills the laptop's side empty space */
             color: #333;
         }
         nav {
@@ -25,7 +25,7 @@ const { title } = Astro.props;
             justify-content: center;
             padding: 2rem 0;
             background: var(--white);
-            border-bottom: 1px solid #e0e0e0;
+            border-bottom: 2px solid var(--gold); /* Added gold for a stronger top border */
             position: sticky;
             top: 0;
             z-index: 100;
@@ -40,14 +40,30 @@ const { title } = Astro.props;
             font-weight: 600;
         }
         nav a:hover { color: var(--gold); }
+        
+        /* THE MAIN EDIT: Creating the "Portfolio" frame */
         main {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 40px 20px;
+            max-width: 1200px; /* Wider to occupy more laptop screen */
+            margin: 40px auto; /* Adds space at the top/bottom so it doesn't touch the edges */
+            padding: 60px;     /* More internal room for your content */
+            background: var(--white); /* White box for your content */
+            border: 1px solid #d1d1d1; /* Soft grey border to define the shape */
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05); /* Soft shadow to give it depth */
+            min-height: 80vh;
         }
+
         h1, h2, h3 { font-family: 'Cormorant Garamond', serif; color: var(--navy); }
         .page-header { text-align: center; margin-bottom: 60px; }
         footer { text-align: center; padding: 40px; font-size: 0.8rem; color: #999; }
+
+        /* Ensuring it still looks good on phones */
+        @media (max-width: 1200px) {
+            main {
+                margin: 0;
+                padding: 30px 20px;
+                border: none;
+            }
+        }
     </style>
 </head>
 <body>
