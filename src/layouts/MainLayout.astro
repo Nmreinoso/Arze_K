@@ -1,64 +1,86 @@
----
-const { title } = Astro.props;
----
-<html lang="en">
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{title}</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --navy: #1a2a6c;
-            --mist: #f4f7f9;
-            --gold: #b89f6d;
-            --white: #ffffff;
-        }
-        body {
-            margin: 0;
-            font-family: 'Montserrat', sans-serif;
-            background-color: var(--mist);
-            color: #333;
-        }
-        nav {
-            display: flex;
-            justify-content: center;
-            padding: 2rem 0;
-            background: var(--white);
-            border-bottom: 1px solid #e0e0e0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        nav a {
-            margin: 0 20px;
-            text-decoration: none;
-            color: var(--navy);
-            text-transform: uppercase;
-            font-size: 0.8rem;
-            letter-spacing: 2px;
-            font-weight: 600;
-        }
-        nav a:hover { color: var(--gold); }
-        main {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
-        h1, h2, h3 { font-family: 'Cormorant Garamond', serif; color: var(--navy); }
-        .page-header { text-align: center; margin-bottom: 60px; }
-        footer { text-align: center; padding: 40px; font-size: 0.8rem; color: #999; }
-    </style>
-</head>
-<body>
-    <nav>
-        <a href="/Arze_K/">Home</a>
-        <a href="/Arze_K/resume/">Resume</a>
-        <a href="/Arze_K/blog/">Blog</a>
-    </nav>
-    <main>
-        <slot />
-    </main>
-    <footer>© 2026 Karen Arze | Professional & Personal Portfolio</footer>
-</body>
-</html>
+<style>
+    :root {
+        --navy: #1a2a6c;
+        --mist: #f4f7f9;
+        --gold: #b89f6d;
+        --white: #ffffff;
+    }
+    
+    body {
+        margin: 0;
+        font-family: 'Montserrat', sans-serif;
+        /* Adds a subtle "linen" texture to the empty space */
+        background-color: var(--mist);
+        background-image: radial-gradient(var(--gold) 0.5px, transparent 0.5px);
+        background-size: 30px 30px;
+        background-attachment: fixed;
+        color: #333;
+        min-height: 100vh;
+    }
+
+    /* This creates the "Frame" effect around the whole page */
+    body::before, body::after {
+        content: "";
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        width: 40px; /* The width of the side frames */
+        background: var(--navy);
+        z-index: 1000;
+    }
+    body::before { left: 0; border-right: 2px solid var(--gold); }
+    body::after { right: 0; border-left: 2px solid var(--gold); }
+
+    nav {
+        display: flex;
+        justify-content: center;
+        padding: 2rem 0;
+        background: var(--white);
+        border-bottom: 3px double var(--gold); /* Double line for a professional look */
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        margin: 0 40px; /* Keeps nav within the frames */
+    }
+
+    nav a {
+        margin: 0 25px;
+        text-decoration: none;
+        color: var(--navy);
+        text-transform: uppercase;
+        font-size: 0.85rem;
+        letter-spacing: 2px;
+        font-weight: 600;
+    }
+
+    main {
+        /* Increased width to fill more screen space */
+        max-width: 1300px; 
+        margin: 40px auto;
+        padding: 60px;
+        background: var(--white);
+        /* Adds a professional "Gallery" shadow */
+        box-shadow: 0 0 50px rgba(0,0,0,0.1);
+        border: 1px solid #e0e0e0;
+        position: relative;
+    }
+
+    /* Adding corner accents for a "loving/maternal" but professional touch */
+    main::before {
+        content: "•";
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        color: var(--gold);
+        font-size: 2rem;
+    }
+
+    footer { 
+        text-align: center; 
+        padding: 40px; 
+        font-size: 0.8rem; 
+        color: #999; 
+        background: var(--white);
+        margin: 0 40px;
+    }
+</style>
