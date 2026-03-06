@@ -1,20 +1,26 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
 ---
-<MainLayout title="Reflections">
-  <div class="glass-card" style="max-width: 700px; margin: 0 auto; text-align: center;">
-    <div style="background: white; padding: 1rem; padding-bottom: 4rem; transform: rotate(-1deg); box-shadow: 0 10px 30px rgba(0,0,0,0.1); margin-bottom: 3rem;">
-       <img src="/Arze_K/home.jpg" alt="Milestones" style="width: 100%; height: auto; display: block;" />
-       <p style="font-family: 'Playfair Display'; margin-top: 1.5rem; font-size: 1.2rem;">New Beginnings 🏠</p>
-    </div>
+<MainLayout title="Blog | Reflections">
+    <div style="max-width: 800px; margin: 0 auto;">
+        <div style="width: 100%; height: 400px; background: #ccc; margin-bottom: 40px;">
+             <img src="/Arze_K/blog-header.jpg" alt="Home and Family" style="width: 100%; height: 100%; object-fit: cover;" />
+        </div>
+        
+        <h1 style="font-size: 3.5rem; text-align: center;">A Season of Gratitude</h1>
+        <div style="text-align: center; margin-bottom: 40px; color: var(--gold); letter-spacing: 2px; font-weight: 600;">BY KAREN ARZE</div>
+        
+        <div style="font-size: 1.3rem; line-height: 2; color: #444; first-letter: { font-size: 3rem; color: var(--navy); }">
+            <p>
+                I am so grateful for the blessings I have been given in this lifetime. Both my children are about to graduate, I'm finally a homeowner <strong>[Yay!]</strong>, and ***** Eye Care has provided me the perfect environment and tools needed to become an even better version of myself.
+            </p>
+        </div>
 
-    <h2 style="font-size: 2rem;">A Season of Gratitude</h2>
-    <p style="line-height: 2; font-size: 1.1rem; color: #444;">
-      "I am so grateful for the blessings I have been given in this lifetime. Both my children are about to graduate, I'm finally a homeowner [Yay!], and ***** Eye Care has provided me the perfect environment to grow..."
-    </p>
-
-    <div style="margin-top: 3rem; display: flex; justify-content: center; gap: 1rem;">
-      <button style="background: var(--navy); color: white; border: none; padding: 1rem 2rem; border-radius: 50px; cursor: pointer;">❤️ Send Warmth</button>
+        <div style="margin-top: 60px; border-top: 1px solid #eee; padding-top: 30px; display: flex; justify-content: space-between; align-items: center;">
+            <p style="font-style: italic;">Share the warmth:</p>
+            <div>
+                <button style="background: var(--navy); color: white; border: none; padding: 10px 25px; cursor: pointer; font-family: 'Montserrat';">Leave a Heart ❤️</button>
+            </div>
+        </div>
     </div>
-  </div>
 </MainLayout>
