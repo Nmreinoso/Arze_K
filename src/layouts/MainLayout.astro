@@ -10,14 +10,14 @@ const { title } = Astro.props;
     <style>
         :root {
             --navy: #1a2a6c;
-            --mist: #eef2f6; /* Slightly deeper mist to define the sides better */
+            --mist: #eef2f6; 
             --gold: #b89f6d;
             --white: #ffffff;
         }
         body {
             margin: 0;
             font-family: 'Montserrat', sans-serif;
-            background-color: var(--mist); /* Fills the laptop's side empty space */
+            background-color: var(--mist); 
             color: #333;
         }
         nav {
@@ -25,7 +25,7 @@ const { title } = Astro.props;
             justify-content: center;
             padding: 2rem 0;
             background: var(--white);
-            border-bottom: 2px solid var(--gold); /* Added gold for a stronger top border */
+            border-bottom: 2px solid var(--gold); 
             position: sticky;
             top: 0;
             z-index: 100;
@@ -41,14 +41,20 @@ const { title } = Astro.props;
         }
         nav a:hover { color: var(--gold); }
         
-        /* THE MAIN EDIT: Creating the "Portfolio" frame */
+        /* THE MAIN EDIT: Enhanced Border and Centering */
         main {
-            max-width: 1200px; /* Wider to occupy more laptop screen */
-            margin: 40px auto; /* Adds space at the top/bottom so it doesn't touch the edges */
-            padding: 60px;     /* More internal room for your content */
-            background: var(--white); /* White box for your content */
-            border: 1px solid #d1d1d1; /* Soft grey border to define the shape */
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05); /* Soft shadow to give it depth */
+            max-width: 1100px; /* Narrowed slightly to feel more 'centered' on wide screens */
+            margin: 60px auto; /* Increased top/bottom margin for a more balanced vertical look */
+            padding: 60px;     
+            background: var(--white); 
+            
+            /* STANDOUT BORDER: A soft grey outer line with a gold 'inset' outline */
+            border: 1px solid #d1d1d1; 
+            outline: 2px solid var(--gold);
+            outline-offset: -15px; /* This pulls the gold line inside the white box */
+            
+            /* Elevated shadow for a professional depth */
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08); 
             min-height: 80vh;
         }
 
@@ -62,19 +68,8 @@ const { title } = Astro.props;
                 margin: 0;
                 padding: 30px 20px;
                 border: none;
+                outline: none; /* Removes the special border on mobile for better fit */
             }
         }
     </style>
 </head>
-<body>
-    <nav>
-        <a href="/Arze_K/">Home</a>
-        <a href="/Arze_K/resume/">Resume</a>
-        <a href="/Arze_K/blog/">Blog</a>
-    </nav>
-    <main>
-        <slot />
-    </main>
-    <footer>© 2026 Karen Arze | Professional & Personal Portfolio</footer>
-</body>
-</html>
