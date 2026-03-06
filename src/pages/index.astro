@@ -1,43 +1,46 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
 ---
-<MainLayout title="Karen Arze | Home">
-  <div style="text-align: center; margin-bottom: 50px;">
-    <div style="width: 150px; height: 150px; background: #e1f0ff; border: 5px solid white; border-radius: 50%; margin: 0 auto 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); display: flex; align-items: center; justify-content: center; color: #0056b3;">
-      <span>Photo</span>
+<MainLayout title="Karen Arze | Welcome">
+  <div class="glass-card">
+    <div style="display: flex; flex-wrap: wrap; gap: 3rem; align-items: center;">
+      <img src="/Arze_K/profile.jpg" alt="Karen Arze" style="width: 280px; height: 380px; object-fit: cover; border-radius: 100px 100px 20px 20px; background: #eee; box-shadow: 20px 20px 0px var(--teal);" />
+      
+      <div style="flex: 1; min-width: 300px;">
+        <h1 style="font-size: 3.5rem; margin: 0;">Karen Arze</h1>
+        <p style="font-size: 1.2rem; line-height: 1.6; margin-top: 1.5rem; color: #444;">
+          { "Quick to adapt and eager to learn... I'm always enthusiastic to apply my experiences into an environment that appreciates organization and efficiency!" }
+        </p>
+        <div style="margin-top: 2rem; font-size: 0.9rem; border-top: 1px solid #ddd; padding-top: 1rem;">
+          <p><strong>Virginia</strong> • 757-515-**** • karen**********@yahoo.com</p>
+        </div>
+      </div>
     </div>
-    <h1 style="color: #003366; font-size: 2.5rem; margin: 0;">Karen Arze</h1>
-    <p style="color: #555; font-style: italic; margin-top: 10px;">Independent Woman • Optometrist • Mother</p>
-  </div>
 
-  <section style="line-height: 1.8; color: #333; margin-bottom: 40px;">
-    <p>Quick to adapt and eager to learn, I am reliable enough to take on leadership roles and always strive for work that can model what I would like to see in others. I'm always enthusiastic to apply my experiences into an environment that appreciates organization and efficiency!</p>
-  </section>
-
-  <div style="background: #f8fbff; border-radius: 15px; padding: 25px; border-left: 5px solid #a2c2e1; margin-bottom: 40px;">
-    <h3 style="color: #003366; margin-top: 0;">Personal Contact</h3>
-    <p>📍 <strong>State:</strong> Virginia</p>
-    <p>📞 <strong>Phone:</strong> 757-515-****</p>
-    <p>✉️ <strong>Email:</strong> karen**********@yahoo.com</p>
-  </div>
-
-  <h2 style="color: #003366; text-align: center;">My Interests</h2>
-  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;">
-    <div style="background: white; border: 1px solid #eef2f7; padding: 15px; border-radius: 12px; box-shadow: 0 2px 5px rgba(0,0,0,0.02);">
-      <h4 style="color: #0056b3; margin-top: 0;">🌊 Beach Walks</h4>
-      <p style="font-size: 0.9rem;">Even if it's a bit of a drive, it's always worth being able to see the beautiful sunrise!</p>
-    </div>
-    <div style="background: white; border: 1px solid #eef2f7; padding: 15px; border-radius: 12px;">
-      <h4 style="color: #0056b3; margin-top: 0;">💃 Dancing</h4>
-      <p style="font-size: 0.9rem;">I know bachata and Meringue; currently practicing Jazz and Salsa. This is when I feel the most like myself!</p>
-    </div>
-    <div style="background: white; border: 1px solid #eef2f7; padding: 15px; border-radius: 12px;">
-      <h4 style="color: #0056b3; margin-top: 0;">🍳 Cooking</h4>
-      <p style="font-size: 0.9rem;">I love being experimental! I challenge myself with what ingredients I have to make something my family will enjoy.</p>
-    </div>
-    <div style="background: #eef2f7; padding: 15px; border-radius: 12px; text-align: center;">
-      <h4 style="color: #003366; margin-top: 0;">❤️ My Children</h4>
-      <p style="font-size: 0.9rem;">My Son and Daughter are my pride and joy! They will always be my babies at heart.</p>
+    <div style="margin-top: 5rem;">
+      <h2 style="text-align: center; margin-bottom: 3rem;">Things that make me smile</h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem;">
+        <div style="text-align: center;">
+          <span style="font-size: 2.5rem;">🌊</span>
+          <h4>Beach Sunrises</h4>
+          <p style="font-size: 0.85rem;">The drive is always worth the view.</p>
+        </div>
+        <div style="text-align: center;">
+          <span style="font-size: 2.5rem;">💃</span>
+          <h4>Bachata & Salsa</h4>
+          <p style="font-size: 0.85rem;">Dancing is where I find my true rhythm.</p>
+        </div>
+        <div style="text-align: center;">
+          <span style="font-size: 2.5rem;">🍳</span>
+          <h4>Kitchen Mastery</h4>
+          <p style="font-size: 0.85rem;">Experimental cooking for the family heart.</p>
+        </div>
+        <div style="text-align: center;">
+          <span style="font-size: 2.5rem;">❤️</span>
+          <h4>My Grown Babies</h4>
+          <p style="font-size: 0.85rem;">My pride and joy, always.</p>
+        </div>
+      </div>
     </div>
   </div>
 </MainLayout>
