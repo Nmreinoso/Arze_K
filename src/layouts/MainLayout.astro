@@ -1,33 +1,27 @@
 <style>
+    /* 1. Global Variables */
     :root {
         --navy: #1a2a6c;
-        --mist: #f4f7f9; /* Soft background color */
+        --mist: #f0f4f8; /* Soft blue-grey for the 'empty' sides */
         --gold: #b89f6d;
         --white: #ffffff;
     }
 
-    /* 1. The Background: Fills the "Empty" laptop space */
-    body {
+    /* 2. The Background (The Empty Space) */
+    html, body {
         margin: 0;
         padding: 0;
+        background-color: var(--mist); /* This color fills the laptop sides */
         font-family: 'Montserrat', sans-serif;
-        background-color: var(--mist);
-        /* Subtle professional texture so the sides aren't "blank" */
-        background-image: radial-gradient(rgba(184, 159, 109, 0.2) 1px, transparent 1px);
-        background-size: 40px 40px;
-        color: #333;
     }
 
-    /* 2. The Navigation: Centered and Clean */
+    /* 3. The Top Navigation */
     nav {
+        background-color: var(--white);
+        padding: 25px 0;
         display: flex;
         justify-content: center;
-        padding: 2rem 0;
-        background: var(--white);
-        border-bottom: 1px solid #e0e0e0;
-        position: sticky;
-        top: 0;
-        z-index: 100;
+        border-bottom: 2px solid var(--gold);
     }
 
     nav a {
@@ -40,17 +34,36 @@
         font-weight: 600;
     }
 
-    /* 3. The Main Content: This "Hugs" your content and stops the empty feeling */
+    /* 4. The Content Box (The Frame) */
     main {
-        max-width: 1200px; /* Wider for laptops */
-        margin: 50px auto; /* Centers the content */
+        /* This fills more of the laptop screen */
+        max-width: 1200px; 
+        margin: 40px auto; /* Centers the box */
+        background-color: var(--white);
         padding: 60px;
-        background: var(--white);
         
-        /* THE FIX: Professional Border & Shadow to define the space */
+        /* Adds a subtle border and shadow so it looks like a professional document */
         border: 1px solid #d1d1d1;
-        border-top: 5px solid var(--navy); /* Professional accent top */
-        box-shadow: 0 10px 50px rgba(0,0,0,0.08);
-        border-radius: 4px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.05);
         
-        /* Ensures content doesn't touch the very edge of the white box */
+        /* Ensures the box stays centered and visible */
+        display: block;
+        min-height: 80vh;
+    }
+
+    footer {
+        text-align: center;
+        padding: 40px;
+        color: #777;
+        font-size: 0.8rem;
+    }
+
+    /* Simple fix for mobile phones */
+    @media (max-width: 1200px) {
+        main {
+            margin: 0;
+            max-width: 100%;
+            border: none;
+        }
+    }
+</style>
