@@ -10,28 +10,26 @@ const { title } = Astro.props;
     <style>
         :root {
             --navy: #1a2a6c;
-            --mist: #f4f7f9; /* Light Blue */
+            --mist: #f4f7f9;
             --gold: #b89f6d;
             --white: #ffffff;
         }
-
-        /* OUTSIDE: Pure White */
         body {
             margin: 0;
-            padding: 0;
-            background-color: #ffffff; 
             font-family: 'Montserrat', sans-serif;
+            background-color: var(--mist);
             color: #333;
         }
-
         nav {
             display: flex;
             justify-content: center;
-            padding: 30px 0;
-            background-color: #ffffff;
-            border-bottom: 1px solid #dddddd;
+            padding: 2rem 0;
+            background: var(--white);
+            border-bottom: 1px solid #e0e0e0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
-
         nav a {
             margin: 0 20px;
             text-decoration: none;
@@ -41,43 +39,34 @@ const { title } = Astro.props;
             letter-spacing: 2px;
             font-weight: 600;
         }
+        nav a:hover { color: var(--gold); }
 
-        /* INSIDE: Light Blue with standard borders */
+        /* UPDATED MAIN SECTION */
         main {
-            max-width: 1000px;
-            margin-top: 50px;
-            margin-bottom: 50px;
-            margin-left: auto;
-            margin-right: auto;
-            padding: 50px;
-            background-color: #f4f7f9; /* Light Blue */
+            max-width: 1000px; /* Shortened width for better laptop centering */
+            margin: 50px auto; /* Centers the box and pulls it away from the nav */
+            padding: 60px;
+            background: var(--white);
             
-            /* Stable Borders */
-            border-top: 6px solid #1a2a6c; /* Navy */
-            border-right: 2px solid #b89f6d; /* Gold */
-            border-bottom: 2px solid #b89f6d; /* Gold */
-            border-left: 2px solid #b89f6d; /* Gold */
+            /* High-contrast borders to define the space */
+            border-top: 6px solid var(--navy);
+            border-left: 1px solid var(--gold);
+            border-right: 1px solid var(--gold);
+            border-bottom: 1px solid var(--gold);
+            
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
         }
 
-        h1, h2, h3 { 
-            font-family: 'Cormorant Garamond', serif; 
-            color: #1a2a6c; 
-        }
+        h1, h2, h3 { font-family: 'Cormorant Garamond', serif; color: var(--navy); }
+        .page-header { text-align: center; margin-bottom: 60px; }
+        footer { text-align: center; padding: 40px; font-size: 0.8rem; color: #999; }
 
-        footer {
-            text-align: center;
-            padding: 40px;
-            font-size: 0.8rem;
-            color: #999;
-        }
-
-        /* Mobile Fix */
+        /* Responsive adjustment for mobile */
         @media (max-width: 1000px) {
             main {
                 margin: 0;
-                width: 100%;
                 border: none;
-                padding: 20px;
+                padding: 40px 20px;
             }
         }
     </style>
